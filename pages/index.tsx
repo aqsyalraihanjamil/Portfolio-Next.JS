@@ -2,11 +2,11 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import React from "react";
 import Data from "../data/list.json";
-import { Card } from "../pages/components/List";
+import Card from "../pages/components/List";
 import Image from "next/image";
 import profilePic from "../public/pp.png";
 import { motion } from "framer-motion";
-// 萝莉少女 少女枪械师;
+
 /**
  * @return {JSX.Element}
  */
@@ -80,8 +80,9 @@ export default function Home() {
             <p className="text-xl">
               Hello, i&apos;m Aqsyal Raihan Jamil. Former vocational highschool
               student. My interest with web development started there, and has
-              become my lifelong joy. In this website, you&apos;ll
-              discover my journey through some project / achievement / challenge that i&apos;ve been done or still developing.
+              become my lifelong joy. In this website, you&apos;ll discover my
+              journey through some project / achievement / challenge that
+              i&apos;ve been done or still developing.
               {/* Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry&apos;s standard dummy
               text ever since the 1500s, when an unknown printer took a galley

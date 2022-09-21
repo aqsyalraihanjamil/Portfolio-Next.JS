@@ -15,7 +15,7 @@ interface color {
   [key: string]: string;
 }
 const color: color = Data.Colors;
-export const Card: FunctionComponent<CardProps> = ({ data }) => (
+const Card: FunctionComponent<CardProps> = ({ data }) => (
   //  the text is in left side , right side is gonna be animated scroll image project
   <div className={"snap-start w-screen min-h-screen flex"}>
     <div className="w-1/2 m-8 mr-12">
@@ -92,3 +92,5 @@ export const Card: FunctionComponent<CardProps> = ({ data }) => (
     <div className="w-1/2"></div>
   </div>
 );
+
+export default Card;
