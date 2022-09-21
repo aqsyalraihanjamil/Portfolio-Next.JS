@@ -1,0 +1,22 @@
+{
+  "Data": [
+    {
+      "id": "01",
+      "title": "Monthly Student School Payment",
+      "genre": ["NodeJS", "ReactJS", "Xampp", "TailwindCSS"],
+      "date": "13 March 2022",
+      "desc": "So, this is my first project that i fully intend to finish it. As you can see on the title, this project is about managing monthly payment for school. The student can easily see their charge, history payment, and total spent. As for admin, they have permission to see, change, edit and delete all data including student, transaction, teacher, and student remaining payment. The most impactful library in this project is TailwindCSS for frontend and sequelize for backend",
+      "image": "sppp.jpg",
+      "github": "https://github.com/aqsyalraihanjamil/FullStack-PembayaranSPPV2.0",
+      "opensource": ""
+    }
+  ],
+  "Colors": {
+    "Fullstack": "#333333",
+    "NodeJS": "#38b000",
+    "ReactJS": "#326AF6",
+    "Xampp": "#fb5607",
+    "TailwindCSS": "#00a896",
+    "Javascript": "#ffa200"
+  }
+}

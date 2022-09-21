@@ -1,116 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .container {
-  padding: 0 2rem;
-}
-
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
+  background-color: #fafafa;
+  padding: 0;
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
 }
 
 .code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
+.snapping {
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.children {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  align-items: center;
+  /* color: black; */
+  scroll-snap-align: start;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.monts {
+  font-family: "Montserrat", sans-serif;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.golds {
+  font-family: "MonacoB2", monospace;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.fadein {
+  animation: 1.5s cubic-bezier(0, 0.1, 0.12, 0.99) 0s 1 normal forwards running
+    gGjJEE;
+  transform: translateY(70px);
+  animation-delay: 1.5s;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+@keyframes gGjJEE {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.fadeinname {
+  animation: 2s cubic-bezier(0, 0.01, 0.39, 0.99) 0s 1 normal forwards running
+    nAME;
+  transform: translateY(150px);
+  animation-delay: 0.5s;
 }
 
-@media (max-width: 600px) {
-  .grid {
+@keyframes nAME {
+  0% {
+    transform: translateY(120px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.toblack {
+  display: inline;
+  color: rgb(255, 255, 255);
+  animation: 0.0001s linear 0.5s 1 normal forwards running eHXjFd;
+  position: relative;
+}
+
+.toblack::after {
+  content: "";
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(34, 34, 34);
+  animation: 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running
+    bKjwxc;
+}
+
+@keyframes eHXjFd {
+  0% {
+    color: rgb(255, 255, 255);
+  }
+  100% {
+    color: rgb(51, 51, 51);
+  }
+}
+
+@keyframes bKjwxc {
+  0% {
+    width: 0%;
+    margin-left: 0%;
+  }
+  50% {
     width: 100%;
-    flex-direction: column;
+    margin-left: 0%;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
   }
 }

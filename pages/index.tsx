@@ -1,11 +1,42 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import React from "react";
+import Data from "../data/list.json";
+import { Card } from "../pages/components/List";
+import Image from "next/image";
+import profilePic from "../public/pp.png";
+import { motion } from "framer-motion";
+// 萝莉少女 少女枪械师;
 /**
  * @return {JSX.Element}
  */
 export default function Home() {
+  // console.log(Data.Data);
+  // const { ref, inView } = useInView({
+  //   threshold: 0.2
+  // });
+  // const animation = useAnimation();
+  // useEffect(() => {
+  //   if (inView) {
+  //     animation.start({
+  //       x: 0,
+  //       transition: {
+  //         type: "spring",
+  //         duration: 2.5,
+  //       },
+  //     });
+  //   }else{
+  //     animation.start({
+  //       x: "-400px",
+  //     });
+
+  //   }
+  // });
+  const spring = {
+    type: "spring",
+    duration: 2,
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,59 +45,59 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className={styles.snapping + " " + styles.code}>
+        <div className={styles.children}>
+          <div>
+            <div className="relative z-10 overflow-hidden p-2 ">
+              <div className={styles.fadeinname + " text-center text-7xl"}>
+                Aqsyal Raihan Jamil
+              </div>
+            </div>
+            <div className="relative z-10  overflow-hidden">
+              <div className={styles.fadein + " text-center text-3xl mt-12"}>
+                Fresh Graduate Web Developer
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+        <div className={"!w-3/4 " + styles.children + "  box-border mx-auto"}>
+          <div className="mx-auto w-2/3 max-w-xl relative z-10">
+            <motion.div
+              initial={{ x: "-400px" }}
+              whileInView={{ x: 0 }}
+              transition={spring}
+              className="mx-auto w-full max-w-xl relative -z-10"
+            >
+              <h1
+                className={
+                  "absolute text-9xl pointer-events-none -top-20 text-opacity-60 -left-16 max-w-md text-gray-300 -z-10 font-black " +
+                  styles.monts
+                }
+              >
+                ABOUT ME
+              </h1>
+            </motion.div>
+            <p className="text-xl">
+              Hello, i&apos;m Aqsyal Raihan Jamil. Former vocational highschool
+              student. My interest with web development started there, and has
+              become my lifelong joy. In this website, you&apos;ll
+              discover my journey through some project / achievement / challenge that i&apos;ve been done or still developing.
+              {/* Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy
+              text ever since the 1500s, when an unknown printer took a galley
+              of type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. */}
+            </p>
+          </div>
+          <div className="max-w-md w-1/4 mx-auto">
+            <Image src={profilePic} alt="Profile" placeholder="blur" />
+          </div>
+        </div>
+        {Data.Data.map((data: any, key: number) => (
+          <Card key={key} data={data} />
+        ))}
+      </div>
     </div>
   );
 }
